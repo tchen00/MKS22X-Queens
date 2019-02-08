@@ -7,7 +7,7 @@ public class QueenBoard{
     return true;
   }
   private boolean removeQueen(int r, int c) {
-    return true;
+    return false;
   }
   /**
   *@return The output string formatted as follows:
@@ -24,7 +24,7 @@ public class QueenBoard{
   *excludes the character up to the *)
   */
   public String toString(){
-    return "";
+    return "-------";
   }
   /**
   *@return false when the board is not solveable and leaves the board filled with zeros;
@@ -46,5 +46,8 @@ public class QueenBoard{
     return 0;
   }
 
-
+  public static void main(String[] args){
+    QueenBoard test = new QueenBoard(5);
+    System.out.println(test.toString());
+  }
 }
