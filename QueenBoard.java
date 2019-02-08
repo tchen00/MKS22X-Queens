@@ -6,11 +6,22 @@ public class QueenBoard{
     }
     board = new int[size][size];
   }
-  private boolean addQueen(int r, int c) {
+  public boolean addQueen(int r, int c) {
     if (board[r][c] == 0){
       board[r][c] = -1;
+      for (int i = 0; i < board.length; i++){
+        if (i != c){
+          board[i][c] += 1;
+        } if (i != r){
+          board[r][i] += 1;
+        }
+      }
       return true;
     } return false;
+  }
+
+  public int[][] getBoard(){
+    return board;
   }
 
   private boolean removeQueen(int r, int c) {
@@ -31,7 +42,13 @@ public class QueenBoard{
   *excludes the character up to the *)
   */
   public String toString(){
-    return "-------";
+    String output = "";
+    for (int i = 0; i < board.length; i++){
+      for (int j = 0; j < board.length; j++){
+        output += board[i][j];
+      }
+    }
+    return output;
   }
   /**
   *@return false when the board is not solveable and leaves the board filled with zeros;
@@ -55,6 +72,7 @@ public class QueenBoard{
 
   public static void main(String[] args){
     QueenBoard test = new QueenBoard(5);
+    test.addQueen(0,0);
     System.out.println(test.toString());
   }
 }
