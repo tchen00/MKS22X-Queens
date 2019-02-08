@@ -19,11 +19,11 @@ public class QueenBoard{
       return true;
     } return false;
   }
-
+/*
   public int[][] getBoard(){
     return board;
   }
-
+*/
   private boolean removeQueen(int r, int c) {
     return false;
   }
