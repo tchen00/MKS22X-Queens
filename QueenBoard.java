@@ -1,11 +1,18 @@
 public class QueenBoard{
   private int[][]board;
   public QueenBoard(int size) {
+    if (size < 0){
+      throw new IllegalArgumentException("cannot have negative size");
+    }
     board = new int[size][size];
   }
   private boolean addQueen(int r, int c) {
-    return true;
+    if (board[r][c] == 0){
+      board[r][c] = -1;
+      return true;
+    } return false;
   }
+
   private boolean removeQueen(int r, int c) {
     return false;
   }
