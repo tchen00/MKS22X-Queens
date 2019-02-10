@@ -10,16 +10,21 @@ public class QueenBoard{
   }
   public boolean addQueen(int r, int c) {
     if (board[r][c] == 0){
-      board[r][c] = -1;
       for (int i = 0; i < size; i++){
         if (i != c){
           board[i][c] += 1;
         } if (i != r){
           board[r][i] += 1;
+        } if (r + i < size){
+          board[r+i][c+i] += 1;
+        } if (r - i >= 0){
+          board[r-i][c+i] += 1;
         }
       }
+      board[r][c] = -1;
       return true;
     } return false;
+
   }
 /*
   public int[][] getBoard(){
@@ -27,7 +32,20 @@ public class QueenBoard{
   }
 */
   private boolean removeQueen(int r, int c) {
-    return false;
+    if (board[r][c] != -1) return false;
+    for (int i = 0; i < size; i++){
+      if (i != c){
+        board[i][c] -= 1;
+      } if (i != r){
+        board[r][i] -= 1;
+      } if (r + i < size){
+        board[r+i][c+i] -= 1;
+      } if (r - i >= 0){
+        board[r-i][c+i] -= 1;
+      }
+    }
+    board[r][c] = 0;
+    return true;
   }
   /**
   *@return The output string formatted as follows:
@@ -79,5 +97,11 @@ public class QueenBoard{
     QueenBoard test = new QueenBoard(5);
     test.addQueen(0,0);
     System.out.println(test.toString());
+    test.removeQueen(0,0);
+    System.out.println(test.toString());
+
+    test.addQueen(1,0);
+    System.out.println(test.toString());
+
   }
 }
