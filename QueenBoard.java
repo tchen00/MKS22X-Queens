@@ -1,15 +1,17 @@
 public class QueenBoard{
   private int[][]board;
+  private int size;
   public QueenBoard(int size) {
     if (size < 0){
       throw new IllegalArgumentException("cannot have negative size");
     }
     board = new int[size][size];
+    this.size = size;
   }
   public boolean addQueen(int r, int c) {
     if (board[r][c] == 0){
       board[r][c] = -1;
-      for (int i = 0; i < board.length; i++){
+      for (int i = 0; i < size; i++){
         if (i != c){
           board[i][c] += 1;
         } if (i != r){
@@ -43,11 +45,14 @@ public class QueenBoard{
   */
   public String toString(){
     String output = "";
-    for (int i = 0; i < board.length; i++){
-      for (int j = 0; j < board.length; j++){
+    for (int i = 0; i < size; i++){
+      for (int j = 0; j < size; j++){
         output += board[i][j];
+        if (j != (size -1)) output += ", ";
       }
+      if (i != (size - 1)) output += "\n";
     }
+    //output += "";
     return output;
   }
   /**
