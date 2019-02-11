@@ -95,7 +95,7 @@ public class QueenBoard{
     String output="";
   	for (int i=0;i<size;i++){
   	  for (int j=0;j<size;j++){
-  		  if (board[j][j]!=-1){
+  		  if (board[i][j]!=-1){
   			  ans+="_";
   		   }else {
   		    ans+="Q";
