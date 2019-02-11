@@ -159,6 +159,7 @@ public class QueenBoard{
         removeQueen(i,col);
       }
     }
+    return false;
   }
   /**
   *@return the number of solutions found, and leaves the board filled with only 0's
