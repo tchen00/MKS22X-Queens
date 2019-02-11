@@ -16,6 +16,7 @@ public class QueenBoard{
 	  }
     board[r][c]=-1;
 	  for (int x=1 ; c+x<size; x++){
+      // does not take into consideration the columns bc thats what the adding queen does
 		  board[r][c+x]+=1;
       //used for diagonals
   	  if (r+x<size){
