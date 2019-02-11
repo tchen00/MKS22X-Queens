@@ -9,7 +9,7 @@ public class QueenBoard{
     board = new int[size][size];
     this.size = size;
   }
-  // adds a queen onto the board
+  // METHOD - adds a queen onto the board
   public boolean addQueen(int r, int c) {
     if (board[r][c]>0){
 		  return false;
@@ -48,6 +48,7 @@ public class QueenBoard{
     return board;
   }
 */
+  // METHOD -- remove a Queen from the board
   private boolean removeQueen(int r, int c) {
     if (board[r][c] != -1) return false;
     board[r][c]+=1;
@@ -91,6 +92,8 @@ public class QueenBoard{
   *(pythonic string notation for clarity,
   *excludes the character up to the *)
   */
+
+  // METHOD - toString to visualize the board
   public String toString(){
     String output="";
   	for (int i=0;i<size;i++){
@@ -118,12 +121,10 @@ public class QueenBoard{
   }
   /**
   *@return false when the board is not solveable and leaves the board filled with zeros;
-
   *        true when the board is solveable, and leaves the board in a solved state
-
   *@throws IllegalStateException when the board starts with any non-zero value
-
   */
+
   public boolean solve(){
     return true;
   }
@@ -132,6 +133,7 @@ public class QueenBoard{
   *@return the number of solutions found, and leaves the board filled with only 0's
   *@throws IllegalStateException when the board starts with any non-zero value
   */
+  
   public int countSolutions() {
     return 0;
   }
