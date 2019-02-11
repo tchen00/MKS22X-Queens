@@ -173,8 +173,15 @@ public class QueenBoard{
   */
 
   public int countSolutions() {
-    return 0;
-  }
+    // essentially same concept as solve
+    for (int i=0;i<size;i++){
+      for (int j=0;j<size;j++){
+        if (board[i][j]!=0){
+          throw new IllegalStateException("board starts with non-zero value");
+        }
+      }
+    } return countSolutionsHelper(0);
+   }
 
   public int countSolutionsHelper(int col){
     int output = 0;
