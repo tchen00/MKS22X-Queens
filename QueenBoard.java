@@ -131,6 +131,18 @@ public class QueenBoard{
   }
 
   public boolean solveHelper(){
+    /*
+    PSEUDOCODE GIVEN BY MR.K IN CLASS
+    boolean solveR(int col)
+      if col is past end of board:
+        return true
+      for each row:
+        if addQueen:
+          if solveR(col+1):
+            return true
+        removeQueen
+     return false
+    */
     return true;
   }
   /**
