@@ -1,7 +1,7 @@
 public class QueenBoard{
   private int[][]board;
   private int size;
-
+  // CONSTRUCTOR
   public QueenBoard(int size) {
     if (size < 0){
       throw new IllegalArgumentException("cannot have negative size");
@@ -9,7 +9,7 @@ public class QueenBoard{
     board = new int[size][size];
     this.size = size;
   }
-
+  // adds a queen onto the board
   public boolean addQueen(int r, int c) {
     if (board[r][c]>0){
 		  return false;
@@ -17,6 +17,7 @@ public class QueenBoard{
     board[r][c]=-1;
 	  for (int x=1 ; c+x<size; x++){
 		  board[r][c+x]+=1;
+      //used for diagonals
   	  if (r+x<size){
   		  board[r+x][c+x]+=1;
   	  }
@@ -52,6 +53,7 @@ public class QueenBoard{
     board[r][c]+=1;
     for(int x=1;c+x<size;x++){
     	board[r][c+x]-=1;
+      //used for diagonals 
       if(r+x<size){
     		board[r+x][c+x]-=1;
     	}
@@ -90,6 +92,7 @@ public class QueenBoard{
   *excludes the character up to the *)
   */
   public String toString(){
+    // for debugging purposes
     String output = "";
     for (int i = 0; i < size; i++){
       for (int j = 0; j < size; j++){
