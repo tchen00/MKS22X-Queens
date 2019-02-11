@@ -127,7 +127,13 @@ public class QueenBoard{
   */
 
   public boolean solve(){
-    return true;
+    for (int i=0;i<size;i++){
+	    for (int j=0;j<size;j++){
+		    if (board[i][j]!=0){
+			    throw new IllegalStateException("board starts with non-zero value");
+		    }
+	    }
+    } return solveHelper(0);
   }
 
   public boolean solveHelper(int col){
