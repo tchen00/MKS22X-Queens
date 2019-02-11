@@ -9,6 +9,21 @@ public class QueenBoard{
     this.size = size;
   }
   public boolean addQueen(int r, int c) {
+    if (board[r][c]>0){
+		  return false;
+	  }
+    board[r][c]=-1;
+	  for (int x=1 ; c+x<size; x++){
+		  board[r][c+x]+=1;
+  	  if (r+x<size){
+  		  board[r+x][c+x]+=1;
+  	  }
+  		if (r-x>=0){
+  			board[r-x][c+x]+=1;
+  		}
+	  } return true;
+  }
+    /*
     if (board[r][c] == 0){
       for (int i = 0; i < size; i++){
         if (i != c){
@@ -24,8 +39,7 @@ public class QueenBoard{
       board[r][c] = -1;
       return true;
     } return false;
-
-  }
+*/
 /*
   public int[][] getBoard(){
     return board;
@@ -99,7 +113,6 @@ public class QueenBoard{
     System.out.println(test.toString());
     test.removeQueen(0,0);
     System.out.println(test.toString());
-
     test.addQueen(1,0);
     System.out.println(test.toString());
 
