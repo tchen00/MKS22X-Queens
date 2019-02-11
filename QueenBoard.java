@@ -96,12 +96,12 @@ public class QueenBoard{
   	for (int i=0;i<size;i++){
   	  for (int j=0;j<size;j++){
   		  if (board[i][j]!=-1){
-  			  ans+="_";
+  			  output+="_";
   		   }else {
-  		    ans+="Q";
+  		    output+="Q";
   		    }
-  	   } ans+="\n";
-  	} return ans;
+  	   } output+="\n";
+  	} return output;
     /*
     // for debugging purposes
     String output = "";
