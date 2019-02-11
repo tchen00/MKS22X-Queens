@@ -53,7 +53,7 @@ public class QueenBoard{
     board[r][c]+=1;
     for(int x=1;c+x<size;x++){
     	board[r][c+x]-=1;
-      //used for diagonals 
+      //used for diagonals
       if(r+x<size){
     		board[r+x][c+x]-=1;
     	}
@@ -92,6 +92,17 @@ public class QueenBoard{
   *excludes the character up to the *)
   */
   public String toString(){
+    String output="";
+  	for (int i=0;i<size;i++){
+  	  for (int j=0;j<size;j++){
+  		  if (board[j][j]!=-1){
+  			  ans+="_";
+  		   }else {
+  		    ans+="Q";
+  		    }
+  	   } ans+="\n";
+  	} return ans;
+    /*
     // for debugging purposes
     String output = "";
     for (int i = 0; i < size; i++){
@@ -103,6 +114,7 @@ public class QueenBoard{
     }
     //output += "";
     return output;
+    */
   }
   /**
   *@return false when the board is not solveable and leaves the board filled with zeros;
