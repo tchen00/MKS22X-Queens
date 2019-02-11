@@ -129,12 +129,19 @@ public class QueenBoard{
     return true;
   }
 
+  public boolean solveHelper(){
+    return true;
+  }
   /**
   *@return the number of solutions found, and leaves the board filled with only 0's
   *@throws IllegalStateException when the board starts with any non-zero value
   */
-  
+
   public int countSolutions() {
+    return 0;
+  }
+
+  public int countSolutionsHelper(){
     return 0;
   }
 
@@ -146,6 +153,6 @@ public class QueenBoard{
     System.out.println(test.toString());
     test.addQueen(1,0);
     System.out.println(test.toString());
-    test.addQueen(10,10);
+    //test.addQueen(10,10);
   }
 }
