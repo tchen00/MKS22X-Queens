@@ -144,6 +144,6 @@ public class QueenBoard{
     System.out.println(test.toString());
     test.addQueen(1,0);
     System.out.println(test.toString());
-
+    test.addQueen(10,10);
   }
 }
