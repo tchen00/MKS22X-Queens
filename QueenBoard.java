@@ -130,7 +130,7 @@ public class QueenBoard{
     return true;
   }
 
-  public boolean solveHelper(){
+  public boolean solveHelper(int col){
     /*
     PSEUDOCODE GIVEN BY MR.K IN CLASS
     boolean solveR(int col)
@@ -143,7 +143,22 @@ public class QueenBoard{
         removeQueen
      return false
     */
-    return true;
+    if (col>=size){
+      //base case when the amount of queens is equal to the size of the board
+      return true;
+    }
+    //for each row
+    for (int i=0;i<size; i++){
+      //check to see if you can add a queen
+      if (addQueen(i,col)){
+        //test to see iif you can add 1 to column + move on
+        if (solveHelper(col+1)){
+          return true;
+        }
+        //if you cannot backtrack!
+        removeQueen(i,col);
+      }
+    }
   }
   /**
   *@return the number of solutions found, and leaves the board filled with only 0's
