@@ -176,8 +176,20 @@ public class QueenBoard{
     return 0;
   }
 
-  public int countSolutionsHelper(){
-    return 0;
+  public int countSolutionsHelper(int col){
+    int output = 0;
+    if (col>=size){
+      return 1;
+    }
+    //one solution
+    for (int i=0;i<size;i++){
+      if (addQueen(i,col)){
+        output += countSolutionsHelper(col+1);
+        //backtrack and delete
+        removeQueen(i,col);
+      }
+    }
+    return output;
   }
 
   public static void main(String[] args){
