@@ -180,7 +180,9 @@ public class QueenBoard{
           throw new IllegalStateException("board starts with non-zero value");
         }
       }
-    } return countSolutionsHelper(0);
+    } int output = countSolutionsHelper(0);
+      clear();
+      return output;
    }
 
   public int countSolutionsHelper(int col){
@@ -192,13 +194,20 @@ public class QueenBoard{
     for (int i=0;i<size;i++){
       if (addQueen(i,col)){
         output += countSolutionsHelper(col+1);
-
+        removeQueen(i,col);
       }
       //backtrack and delete
     }
     return output;
   }
-
+  //clear method
+  public void clear(){
+    for (int r = 0; r < board.length; r++){
+      for (int c = 0; c < board[r].length; c++){
+        board[r][c] = 0;
+      }
+    }
+  }
   public static void main(String[] args){
     //christys driver
     QueenBoard board1 = new QueenBoard(1);
